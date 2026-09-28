@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 980" width="100%" height="100%" style="background-color: #ffffff; font-family: Arial, Helvetica, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+    <marker id="openArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#000000" stroke-width="1.5"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="670" y="36" fill="#000000" font-size="22" font-weight="bold" text-anchor="middle">SafeTrip — Core Sequence Diagram</text>
+  <line x1="40" y1="50" x2="1300" y2="50" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- ================= ACTOR: TRAVELER ================= -->
+  <g transform="translate(50, 65)">
+    <!-- Head -->
+    <circle cx="25" cy="12" r="10" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <!-- Body -->
+    <line x1="25" y1="22" x2="25" y2="46" stroke="#000000" stroke-width="1.8"/>
+    <!-- Arms -->
+    <line x1="10" y1="30" x2="40" y2="30" stroke="#000000" stroke-width="1.8"/>
+    <!-- Left Leg -->
+    <line x1="25" y1="46" x2="12" y2="64" stroke="#000000" stroke-width="1.8"/>
+    <!-- Right Leg -->
+    <line x1="25" y1="46" x2="38" y2="64" stroke="#000000" stroke-width="1.8"/>
+    <!-- Label -->
+    <text x="25" y="80" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Traveler</text>
+    <!-- Lifeline -->
+    <line x1="25" y1="88" x2="25" y2="880" stroke="#000000" stroke-width="1.2" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- ================= COMPONENT 1: AUTH SERVICE ================= -->
+  <g transform="translate(220, 80)">
+    <rect width="120" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="60" y="20" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Auth</text>
+    <text x="60" y="36" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Service</text>
+    <line x1="60" y1="45" x2="60" y2="865" stroke="#000000" stroke-width="1.2" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- ================= COMPONENT 2: PLACES SERVICE ================= -->
+  <g transform="translate(390, 80)">
+    <rect width="120" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="60" y="20" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Places</text>
+    <text x="60" y="36" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Service</text>
+    <line x1="60" y1="45" x2="60" y2="865" stroke="#000000" stroke-width="1.2" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- ================= COMPONENT 3: TRIP SERVICE ================= -->
+  <g transform="translate(560, 80)">
+    <rect width="120" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="60" y="20" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Trip</text>
+    <text x="60" y="36" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Service</text>
+    <line x1="60" y1="45" x2="60" y2="865" stroke="#000000" stroke-width="1.2" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- ================= COMPONENT 4: SAFETY HUB ================= -->
+  <g transform="translate(730, 80)">
+    <rect width="120" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="60" y="20" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Safety</text>
+    <text x="60" y="36" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Hub</text>
+    <line x1="60" y1="45" x2="60" y2="865" stroke="#000000" stroke-width="1.2" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- ================= COMPONENT 5: SAFETY SERVICE ================= -->
+  <g transform="translate(900, 80)">
+    <rect width="120" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="60" y="20" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Safety</text>
+    <text x="60" y="36" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Service</text>
+    <line x1="60" y1="45" x2="60" y2="865" stroke="#000000" stroke-width="1.2" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- ================= COMPONENT 6: DATABASE ================= -->
+  <g transform="translate(1070, 80)">
+    <rect width="110" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="55" y="28" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">Database</text>
+    <line x1="55" y1="45" x2="55" y2="865" stroke="#000000" stroke-width="1.2" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- ================= COMPONENT 7: SYSTEM ================= -->
+  <g transform="translate(1220, 80)">
+    <rect width="100" height="45" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="50" y="28" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">System</text>
+    <line x1="50" y1="45" x2="50" y2="865" stroke="#000000" stroke-width="1.2" stroke-dasharray="6,4"/>
+  </g>
+
+  <!-- ================= ACTIVATION BARS ================= -->
+  <rect x="70" y="160" width="10" height="710" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+  <rect x="275" y="170" width="10" height="85" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+  <rect x="445" y="285" width="10" height="75" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+  <rect x="615" y="390" width="10" height="90" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+  <rect x="785" y="510" width="10" height="235" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+  <rect x="955" y="605" width="10" height="120" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+
+  <!-- Database Activations -->
+  <rect x="1120" y="185" width="10" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+  <rect x="1120" y="410" width="10" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+  <rect x="1120" y="640" width="10" height="50" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+
+  <!-- System Activation -->
+  <rect x="1265" y="780" width="10" height="55" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+
+  <!-- ================= 1. LOGIN (STEPS 1-4) ================= -->
+  <!-- 1: login(email, password) -->
+  <line x1="80" y1="175" x2="275" y2="175" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="175" y="167" fill="#000000" font-size="12" text-anchor="middle">1: login(email, password)</text>
+
+  <!-- 2: validate credentials -->
+  <line x1="285" y1="195" x2="1120" y2="195" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="700" y="187" fill="#000000" font-size="12" text-anchor="middle">2: validate credentials (email, hashed password)</text>
+
+  <!-- 3: valid credentials -->
+  <line x1="1120" y1="220" x2="285" y2="220" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+  <text x="700" y="213" fill="#000000" font-size="12" text-anchor="middle">3: valid user credentials</text>
+
+  <!-- 4: login successful -->
+  <line x1="275" y1="245" x2="80" y2="245" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+  <text x="175" y="237" fill="#000000" font-size="12" text-anchor="middle">4: login successful (JWT token)</text>
+
+  <!-- ================= 2. PLACES EXPLORATION (STEPS 5-7) ================= -->
+  <!-- 5: searchPlaces -->
+  <line x1="80" y1="290" x2="445" y2="290" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="260" y="282" fill="#000000" font-size="12" text-anchor="middle">5: searchPlaces(destination="Paris", category="attractions")</text>
+
+  <!-- 6: query Geoapify -->
+  <path d="M 455 310 C 495 310, 495 330, 455 330" fill="none" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="500" y="324" fill="#000000" font-size="11">6: fetch Geoapify places &amp; coordinates</text>
+
+  <!-- 7: return places -->
+  <line x1="445" y1="345" x2="80" y2="345" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+  <text x="260" y="337" fill="#000000" font-size="12" text-anchor="middle">7: places list &amp; map pins</text>
+
+  <!-- ================= 3. TRIP PLANNING (STEPS 8-11) ================= -->
+  <!-- 8: createTrip -->
+  <line x1="80" y1="395" x2="615" y2="395" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="345" y="387" fill="#000000" font-size="12" text-anchor="middle">8: createTrip(destination="Paris", dates, notes)</text>
+
+  <!-- 9: save trip details -->
+  <line x1="625" y1="415" x2="1120" y2="415" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="870" y="407" fill="#000000" font-size="12" text-anchor="middle">9: save trip details</text>
+
+  <!-- 10: trip saved -->
+  <line x1="1120" y1="445" x2="625" y2="445" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+  <text x="870" y="437" fill="#000000" font-size="12" text-anchor="middle">10: trip saved in database</text>
+
+  <!-- 11: trip created -->
+  <line x1="615" y1="470" x2="80" y2="470" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+  <text x="345" y="462" fill="#000000" font-size="12" text-anchor="middle">11: trip created successfully</text>
+
+  <!-- ================= 4. SAFETY HUB (STEPS 12-13) ================= -->
+  <!-- 12: openSafetyHub -->
+  <line x1="80" y1="520" x2="785" y2="520" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="430" y="512" fill="#000000" font-size="12" text-anchor="middle">12: openSafetyHub()</text>
+
+  <!-- 13: view hospital & police station cards and directions -->
+  <line x1="785" y1="555" x2="80" y2="555" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+  <text x="430" y="547" fill="#000000" font-size="12" text-anchor="middle">13: display hospital &amp; police station discovery cards and directions</text>
+
+  <!-- ================= 5. SAFETY CHECK-IN (STEPS 14-18) ================= -->
+  <!-- 14: clickCheckIn -->
+  <line x1="80" y1="605" x2="785" y2="605" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="430" y="597" fill="#000000" font-size="12" text-anchor="middle">14: clickCheckIn("✓ I'm Safe", location="Eiffel Tower", lat, lon)</text>
+
+  <!-- 15: saveCheckin -->
+  <line x1="795" y1="625" x2="955" y2="625" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="875" y="617" fill="#000000" font-size="11" text-anchor="middle">15: saveCheckin(location, lat, lon)</text>
+
+  <!-- 16: insert check-in log -->
+  <line x1="965" y1="645" x2="1120" y2="645" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="1040" y="637" fill="#000000" font-size="11" text-anchor="middle">16: insert check-in</text>
+
+  <!-- 17: checkin saved -->
+  <line x1="1120" y1="675" x2="965" y2="675" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+  <text x="1040" y="668" fill="#000000" font-size="11" text-anchor="middle">17: check-in saved</text>
+
+  <!-- 18: checkin recorded successfully -->
+  <line x1="955" y1="705" x2="80" y2="705" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+  <text x="515" y="697" fill="#000000" font-size="12" text-anchor="middle">18: safety check-in recorded successfully</text>
+
+  <!-- ================= 6. LOGOUT (STEPS 19-20) ================= -->
+  <!-- 19: logout -->
+  <line x1="80" y1="785" x2="1265" y2="785" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="670" y="777" fill="#000000" font-size="12" text-anchor="middle">19: logout</text>
+
+  <!-- 20: logout success -->
+  <line x1="1265" y1="820" x2="80" y2="820" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#openArrow)"/>
+  <text x="670" y="812" fill="#000000" font-size="12" text-anchor="middle">20: logout success</text>
+
+</svg>

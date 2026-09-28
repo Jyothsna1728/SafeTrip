@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" width="100%" height="100%" style="background-color: #ffffff; font-family: Arial, Helvetica, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="38" fill="#000000" font-size="24" font-weight="bold" text-anchor="middle">SafeTrip — UML Statechart Diagram</text>
+  <line x1="40" y1="52" x2="1160" y2="52" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- ================= 1. INITIAL STATE ================= -->
+  <circle cx="350" cy="90" r="14" fill="#000000"/>
+  <text x="350" y="122" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">Start</text>
+
+  <!-- Line to Unauthenticated State -->
+  <line x1="350" y1="104" x2="350" y2="145" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- State 1: Unauthenticated -->
+  <g transform="translate(210, 145)">
+    <rect width="280" height="65" rx="12" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="140" y="26" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">Unauthenticated</text>
+    <line x1="0" y1="36" x2="280" y2="36" stroke="#000000" stroke-width="1"/>
+    <text x="14" y="52" fill="#000000" font-size="11">entry / displayLoginForm()</text>
+  </g>
+
+  <!-- Loopback on Invalid Credentials (Right side of Unauthenticated) -->
+  <path d="M 490 165 L 560 165 L 560 190 L 490 190" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="570" y="180" fill="#000000" font-size="11">login() [invalid] / showAuthError()</text>
+
+  <!-- Line: Unauthenticated -> DashboardIdle -->
+  <line x1="350" y1="210" x2="350" y2="280" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="360" y="250" fill="#000000" font-size="11" font-weight="bold">login() [valid] / generateJWT()</text>
+
+  <!-- State 2: DashboardIdle (Central Hub State) -->
+  <g transform="translate(200, 280)">
+    <rect width="300" height="85" rx="12" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="150" y="26" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">DashboardIdle</text>
+    <line x1="0" y1="36" x2="300" y2="36" stroke="#000000" stroke-width="1"/>
+    <text x="14" y="54" fill="#000000" font-size="11">entry / loadUserProfile()</text>
+    <text x="14" y="72" fill="#000000" font-size="11">do / awaitUserNavigation()</text>
+  </g>
+
+  <!-- ================= 2. THREE DEDICATED FEATURE STATES ================= -->
+
+  <!-- BRANCH 1: EXPLORING PLACES (Top Right) -->
+  <path d="M 500 300 L 750 300" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="620" y="290" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">selectExplore()</text>
+
+  <g transform="translate(750, 255)">
+    <rect width="360" height="95" rx="12" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="180" y="26" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">ExploringPlaces</text>
+    <line x1="0" y1="36" x2="360" y2="36" stroke="#000000" stroke-width="1"/>
+    <text x="14" y="54" fill="#000000" font-size="11">entry / renderLeafletMap()</text>
+    <text x="14" y="70" fill="#000000" font-size="11">do / fetchGeoapifyPlaces()</text>
+    <text x="14" y="86" fill="#000000" font-size="11">bookmarkPlace / addSavedPlace()</text>
+  </g>
+
+  <!-- Return from ExploringPlaces to DashboardIdle -->
+  <path d="M 750 335 L 500 335" fill="none" stroke="#000000" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="620" y="352" fill="#000000" font-size="10" text-anchor="middle">returnToDashboard()</text>
+
+  <!-- BRANCH 2: PLANNING TRIP & TRIP SAVED (Middle Right) -->
+  <path d="M 500 350 L 620 350 L 620 460 L 750 460" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="680" y="445" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">selectPlanTrip()</text>
+
+  <g transform="translate(750, 410)">
+    <rect width="360" height="95" rx="12" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="180" y="26" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">PlanningTrip</text>
+    <line x1="0" y1="36" x2="360" y2="36" stroke="#000000" stroke-width="1"/>
+    <text x="14" y="54" fill="#000000" font-size="11">entry / initTripForm()</text>
+    <text x="14" y="70" fill="#000000" font-size="11">do / addItineraryStops()</text>
+    <text x="14" y="86" fill="#000000" font-size="11">saveTrip / persistItinerary()</text>
+  </g>
+
+  <!-- Line: PlanningTrip -> TripSaved -->
+  <line x1="930" y1="505" x2="930" y2="550" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="940" y="532" fill="#000000" font-size="11" font-weight="bold">confirmSave()</text>
+
+  <g transform="translate(750, 550)">
+    <rect width="360" height="70" rx="12" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="180" y="26" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">TripSaved</text>
+    <line x1="0" y1="36" x2="360" y2="36" stroke="#000000" stroke-width="1"/>
+    <text x="14" y="54" fill="#000000" font-size="11">entry / displayTimelineSummary()</text>
+  </g>
+
+  <!-- Return from TripSaved to DashboardIdle -->
+  <path d="M 750 590 L 590 590 L 590 360 L 500 360" fill="none" stroke="#000000" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="670" y="582" fill="#000000" font-size="10" text-anchor="middle">returnToDashboard()</text>
+
+  <!-- BRANCH 3: SAFETY HUB MONITORING (Bottom Right) -->
+  <path d="M 350 365 L 350 690 L 750 690" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="540" y="680" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">openSafetyHub()</text>
+
+  <g transform="translate(750, 650)">
+    <rect width="360" height="95" rx="12" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="180" y="26" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">SafetyHubMonitoring</text>
+    <line x1="0" y1="36" x2="360" y2="36" stroke="#000000" stroke-width="1"/>
+    <text x="14" y="54" fill="#000000" font-size="11">entry / getNearbyEmergencyFacilities()</text>
+    <text x="14" y="70" fill="#000000" font-size="11">do / displayHospitalPoliceCards()</text>
+    <text x="14" y="86" fill="#000000" font-size="11">viewDirections / openDirectionsMap()</text>
+  </g>
+
+  <!-- Return from SafetyHub to DashboardIdle -->
+  <path d="M 750 725 L 320 725 L 320 365" fill="none" stroke="#000000" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="540" y="740" fill="#000000" font-size="10" text-anchor="middle">returnToDashboard()</text>
+
+  <!-- ================= 3. LOGOUT & FINAL STATE ================= -->
+  <!-- Line: DashboardIdle -> SessionTerminated -->
+  <line x1="200" y1="320" x2="100" y2="320" stroke="#000000" stroke-width="1.6"/>
+  <line x1="100" y1="320" x2="100" y2="850" stroke="#000000" stroke-width="1.6"/>
+  <line x1="100" y1="850" x2="210" y2="850" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="110" y="600" fill="#000000" font-size="11" font-weight="bold">logout() / clearJWT()</text>
+
+  <!-- State 7: SessionTerminated -->
+  <g transform="translate(210, 820)">
+    <rect width="280" height="65" rx="12" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="140" y="26" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">SessionTerminated</text>
+    <line x1="0" y1="36" x2="280" y2="36" stroke="#000000" stroke-width="1"/>
+    <text x="14" y="52" fill="#000000" font-size="11">entry / invalidateSession()</text>
+  </g>
+
+  <!-- Line: SessionTerminated -> Final State -->
+  <line x1="350" y1="885" x2="350" y2="940" stroke="#000000" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Final State Node -->
+  <g transform="translate(350, 960)">
+    <circle cx="0" cy="0" r="16" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#000000"/>
+  </g>
+  <text x="350" y="992" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">End</text>
+
+</svg>

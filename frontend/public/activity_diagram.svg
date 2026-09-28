@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1020" width="100%" height="100%" style="background-color: #ffffff; font-family: Arial, Helvetica, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="550" y="36" fill="#000000" font-size="22" font-weight="bold" text-anchor="middle">SafeTrip — UML Activity Diagram</text>
+  <line x1="40" y1="50" x2="1060" y2="50" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- ================= 1. INITIAL NODE ================= -->
+  <circle cx="550" cy="80" r="14" fill="#000000"/>
+  <text x="550" y="112" fill="#000000" font-size="12" text-anchor="middle">Start</text>
+
+  <!-- Line to Login -->
+  <line x1="550" y1="94" x2="550" y2="130" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Action: Login -->
+  <g transform="translate(435, 130)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="25" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Enter Email &amp; Password</text>
+  </g>
+
+  <!-- Line to Decision 1 -->
+  <line x1="550" y1="170" x2="550" y2="205" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Decision 1: Valid Credentials? -->
+  <g transform="translate(490, 205)">
+    <polygon points="60,0 120,30 60,60 0,30" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="60" y="34" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Valid?</text>
+  </g>
+
+  <!-- [No] -> Error and Retry -->
+  <line x1="610" y1="235" x2="710" y2="235" stroke="#000000" stroke-width="1.5"/>
+  <text x="650" y="227" fill="#000000" font-size="11">[No]</text>
+  <line x1="710" y1="235" x2="710" y2="150" stroke="#000000" stroke-width="1.5"/>
+  <line x1="710" y1="150" x2="665" y2="150" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="715" y="195" fill="#000000" font-size="11">Display Error</text>
+
+  <!-- [Yes] -> Dashboard -->
+  <line x1="550" y1="265" x2="550" y2="300" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="560" y="285" fill="#000000" font-size="11">[Yes]</text>
+
+  <!-- Action: SafeTrip Dashboard -->
+  <g transform="translate(440, 300)">
+    <rect width="220" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="110" y="25" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">SafeTrip Dashboard</text>
+  </g>
+
+  <!-- Line to Decision 2 (Feature Branch Selection) -->
+  <line x1="550" y1="340" x2="550" y2="375" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Decision 2: Select Feature Menu -->
+  <g transform="translate(470, 375)">
+    <polygon points="80,0 160,35 80,70 0,35" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="80" y="38" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Select Action</text>
+  </g>
+
+  <!-- Lines from Decision 2 to 3 Main Feature Branches -->
+  <!-- Left Branch: Place Explorer -->
+  <line x1="470" y1="410" x2="200" y2="410" stroke="#000000" stroke-width="1.5"/>
+  <text x="280" y="402" fill="#000000" font-size="11">[Explore Places]</text>
+  <line x1="200" y1="410" x2="200" y2="450" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Center Branch: Trip Planner -->
+  <line x1="550" y1="445" x2="550" y2="480" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="560" y="465" fill="#000000" font-size="11">[Plan Trips]</text>
+
+  <!-- Right Branch: Safety Hub -->
+  <line x1="630" y1="410" x2="900" y2="410" stroke="#000000" stroke-width="1.5"/>
+  <text x="730" y="402" fill="#000000" font-size="11">[Safety Hub]</text>
+  <line x1="900" y1="410" x2="900" y2="450" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ================= BRANCH 1: PLACES EXPLORER ================= -->
+  <g transform="translate(85, 450)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="25" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">Search Destination Places</text>
+  </g>
+
+  <line x1="200" y1="490" x2="200" y2="525" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(85, 525)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="25" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">View Map Pins (Geoapify)</text>
+  </g>
+
+  <line x1="200" y1="565" x2="200" y2="600" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(85, 600)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="25" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">Bookmark Saved Places</text>
+  </g>
+
+  <line x1="200" y1="640" x2="200" y2="760" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- ================= BRANCH 2: TRIP PLANNER ================= -->
+  <g transform="translate(435, 480)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="25" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">Create Trip (Dates &amp; Notes)</text>
+  </g>
+
+  <line x1="550" y1="520" x2="550" y2="555" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(435, 555)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="25" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">Add Stops to Itinerary</text>
+  </g>
+
+  <line x1="550" y1="595" x2="550" y2="630" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(435, 630)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="25" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">Save Trip Timeline</text>
+  </g>
+
+  <line x1="550" y1="670" x2="550" y2="760" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- ================= BRANCH 3: SAFETY HUB ================= -->
+  <g transform="translate(785, 450)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="25" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">Open Safety Hub</text>
+  </g>
+
+  <line x1="900" y1="490" x2="900" y2="525" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(785, 525)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="20" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Discover Nearby Hospitals</text>
+    <text x="115" y="33" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">&amp; Police Stations</text>
+  </g>
+
+  <line x1="900" y1="565" x2="900" y2="600" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(785, 600)">
+    <rect width="230" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="115" y="25" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">View Directions on Map</text>
+  </g>
+
+  <line x1="900" y1="640" x2="900" y2="760" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- ================= MERGE NODE (DECISION DIAMOND MERGE) ================= -->
+  <line x1="200" y1="760" x2="510" y2="760" stroke="#000000" stroke-width="1.5"/>
+  <line x1="900" y1="760" x2="590" y2="760" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- Merge Diamond -->
+  <g transform="translate(510, 740)">
+    <polygon points="40,0 80,20 40,40 0,20" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+  </g>
+
+  <line x1="550" y1="780" x2="550" y2="815" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Action: Logout -->
+  <g transform="translate(450, 815)">
+    <rect width="200" height="40" rx="15" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="100" y="25" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Logout</text>
+  </g>
+
+  <line x1="550" y1="855" x2="550" y2="895" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ================= FINAL NODE ================= -->
+  <g transform="translate(550, 910)">
+    <circle cx="0" cy="0" r="15" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <circle cx="0" cy="0" r="9" fill="#000000"/>
+  </g>
+  <text x="550" y="940" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">End</text>
+
+</svg>

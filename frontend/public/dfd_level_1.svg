@@ -1,0 +1,360 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 1280" width="100%" height="100%" style="background-color: #ffffff; font-family: Arial, Helvetica, sans-serif;">
+  <defs>
+    <marker id="dfd-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="780" y="38" fill="#000000" font-size="24" font-weight="bold" text-anchor="middle">SafeTrip — Level-1 Data Flow Diagram</text>
+  <line x1="50" y1="52" x2="1510" y2="52" stroke="#000000" stroke-width="1.5"/>
+
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP SECTION: USER AUTHENTICATION & MANAGEMENT (1.0) -->
+  <!-- ========================================================================= -->
+
+  <!-- Top-Left: Traveler -->
+  <g transform="translate(60, 95)">
+    <rect width="180" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="90" y="40" fill="#000000" font-size="15" font-weight="bold" text-anchor="middle">Traveler</text>
+  </g>
+
+  <!-- Flow: Traveler to 1.0 (Top Line) -->
+  <line x1="240" y1="115" x2="490" y2="115" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(260, 95)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Registration / Login Info &#x2192;</text>
+  </g>
+
+  <!-- Flow: 1.0 to Traveler (Bottom Line) -->
+  <line x1="490" y1="145" x2="240" y2="145" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(260, 148)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">&#x2190; Auth Status &amp; JWT</text>
+  </g>
+
+  <!-- Process 1.0 Circle -->
+  <g transform="translate(490, 75)">
+    <circle cx="55" cy="55" r="55" fill="#ffffff" stroke="#000000" stroke-width="2.2"/>
+    <text x="55" y="38" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">1.0</text>
+    <line x1="20" y1="46" x2="90" y2="46" stroke="#000000" stroke-width="1"/>
+    <text x="55" y="62" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">User Auth &amp;</text>
+    <text x="55" y="78" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Management</text>
+  </g>
+
+  <!-- Flow: 1.0 to D1 User Database -->
+  <line x1="600" y1="115" x2="850" y2="115" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(620, 95)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" text-anchor="middle">Store Profile Details &#x2192;</text>
+  </g>
+
+  <!-- Flow: D1 User Database to 1.0 -->
+  <line x1="850" y1="145" x2="600" y2="145" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(620, 148)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" text-anchor="middle">&#x2190; Profile Access</text>
+  </g>
+
+  <!-- D1 User Database Store -->
+  <g transform="translate(850, 105)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#000000" stroke-width="2"/>
+    <line x1="0" y1="50" x2="230" y2="50" stroke="#000000" stroke-width="2"/>
+    <line x1="50" y1="0" x2="50" y2="50" stroke="#000000" stroke-width="1.2"/>
+    <text x="25" y="32" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">D1</text>
+    <text x="140" y="31" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">User Database</text>
+  </g>
+
+  <!-- Flow: 1.0 to Email Service -->
+  <line x1="1080" y1="115" x2="1260" y2="115" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(1100, 95)">
+    <rect width="140" height="18" fill="#ffffff"/>
+    <text x="70" y="14" fill="#000000" font-size="11" text-anchor="middle">Reset OTP &#x2192;</text>
+  </g>
+
+  <!-- Flow: Email Service to 1.0 -->
+  <line x1="1260" y1="145" x2="1080" y2="145" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(1100, 148)">
+    <rect width="140" height="18" fill="#ffffff"/>
+    <text x="70" y="14" fill="#000000" font-size="11" text-anchor="middle">&#x2190; OTP Status</text>
+  </g>
+
+  <!-- Top-Right: Email Service -->
+  <g transform="translate(1260, 95)">
+    <rect width="220" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="110" y="40" fill="#000000" font-size="15" font-weight="bold" text-anchor="middle">Email Service</text>
+  </g>
+
+  <!-- Horizontal Separation Line 1 -->
+  <line x1="60" y1="210" x2="1500" y2="210" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. MIDDLE SECTION: PLACE DISCOVERY & MAP NAVIGATION (2.0) -->
+  <!-- ========================================================================= -->
+
+  <!-- Middle-Left: Traveler -->
+  <g transform="translate(60, 275)">
+    <rect width="180" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="90" y="40" fill="#000000" font-size="15" font-weight="bold" text-anchor="middle">Traveler</text>
+  </g>
+
+  <!-- Flow: Traveler to 2.0 -->
+  <line x1="240" y1="295" x2="490" y2="295" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(260, 275)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Search Destination &#x2192;</text>
+  </g>
+
+  <!-- Flow: 2.0 to Traveler -->
+  <line x1="490" y1="325" x2="240" y2="325" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(260, 328)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">&#x2190; View Places</text>
+  </g>
+
+  <!-- Process 2.0 Circle -->
+  <g transform="translate(490, 255)">
+    <circle cx="55" cy="55" r="55" fill="#ffffff" stroke="#000000" stroke-width="2.2"/>
+    <text x="55" y="38" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">2.0</text>
+    <line x1="20" y1="46" x2="90" y2="46" stroke="#000000" stroke-width="1"/>
+    <text x="55" y="62" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Place Discovery</text>
+    <text x="55" y="78" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">&amp; Map Nav</text>
+  </g>
+
+  <!-- Flow: 2.0 to D2 Saved Places Database -->
+  <line x1="600" y1="295" x2="850" y2="295" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(620, 275)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" text-anchor="middle">Bookmark Place &#x2192;</text>
+  </g>
+
+  <!-- Flow: D2 Saved Places Database to 2.0 -->
+  <line x1="850" y1="325" x2="600" y2="325" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(620, 328)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" text-anchor="middle">&#x2190; Saved Places</text>
+  </g>
+
+  <!-- D2 Saved Places Database Store -->
+  <g transform="translate(850, 285)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#000000" stroke-width="2"/>
+    <line x1="0" y1="50" x2="230" y2="50" stroke="#000000" stroke-width="2"/>
+    <line x1="50" y1="0" x2="50" y2="50" stroke="#000000" stroke-width="1.2"/>
+    <text x="25" y="32" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">D2</text>
+    <text x="140" y="31" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Saved Places DB</text>
+  </g>
+
+  <!-- Flow: 2.0 to Map & Places Service -->
+  <line x1="1080" y1="295" x2="1260" y2="295" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(1100, 275)">
+    <rect width="140" height="18" fill="#ffffff"/>
+    <text x="70" y="14" fill="#000000" font-size="11" text-anchor="middle">Search Query &#x2192;</text>
+  </g>
+
+  <!-- Flow: Map & Places Service to 2.0 -->
+  <line x1="1260" y1="325" x2="1080" y2="325" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(1100, 328)">
+    <rect width="140" height="18" fill="#ffffff"/>
+    <text x="70" y="14" fill="#000000" font-size="11" text-anchor="middle">&#x2190; Places &amp; POIs</text>
+  </g>
+
+  <!-- Middle-Right: Map & Places Service -->
+  <g transform="translate(1260, 275)">
+    <rect width="220" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="110" y="40" fill="#000000" font-size="15" font-weight="bold" text-anchor="middle">Map &amp; Places Service</text>
+  </g>
+
+  <!-- Solid Inter-Process Flow: 2.0 to 3.0 (Selected Place) -->
+  <line x1="545" y1="365" x2="545" y2="475" stroke="#000000" stroke-width="1.6" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(555, 410)">
+    <rect width="110" height="18" fill="#ffffff"/>
+    <text x="55" y="14" fill="#000000" font-size="11" font-weight="bold">Selected Place &#x2193;</text>
+  </g>
+
+  <!-- Horizontal Separation Line 2 -->
+  <line x1="60" y1="435" x2="1500" y2="435" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. CENTER-LOWER SECTION: TRIP & ITINERARY MANAGEMENT (3.0) -->
+  <!-- ========================================================================= -->
+
+  <!-- Center-Left Traveler (for Trips) -->
+  <g transform="translate(60, 495)">
+    <rect width="180" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="90" y="40" fill="#000000" font-size="15" font-weight="bold" text-anchor="middle">Traveler</text>
+  </g>
+
+  <!-- Flow: Traveler to 3.0 -->
+  <line x1="240" y1="515" x2="490" y2="515" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(250, 495)">
+    <rect width="230" height="18" fill="#ffffff"/>
+    <text x="115" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Create Trip / Add Stops &#x2192;</text>
+  </g>
+
+  <!-- Flow: 3.0 to Traveler -->
+  <line x1="490" y1="545" x2="240" y2="545" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(250, 548)">
+    <rect width="230" height="18" fill="#ffffff"/>
+    <text x="115" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">&#x2190; Saved Trip Timeline</text>
+  </g>
+
+  <!-- Process 3.0 Circle -->
+  <g transform="translate(490, 475)">
+    <circle cx="55" cy="55" r="55" fill="#ffffff" stroke="#000000" stroke-width="2.2"/>
+    <text x="55" y="38" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">3.0</text>
+    <line x1="20" y1="46" x2="90" y2="46" stroke="#000000" stroke-width="1"/>
+    <text x="55" y="62" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Trip &amp; Itinerary</text>
+    <text x="55" y="78" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Management</text>
+  </g>
+
+  <!-- Flow: 3.0 to D3 Trip Database -->
+  <line x1="600" y1="515" x2="850" y2="515" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(620, 495)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" text-anchor="middle">Save Trip &#x2192;</text>
+  </g>
+
+  <!-- Flow: D3 Trip Database to 3.0 -->
+  <line x1="850" y1="545" x2="600" y2="545" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(620, 548)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" text-anchor="middle">&#x2190; Fetch Trips</text>
+  </g>
+
+  <!-- D3 Trip Database Store -->
+  <g transform="translate(850, 505)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#000000" stroke-width="2"/>
+    <line x1="0" y1="50" x2="230" y2="50" stroke="#000000" stroke-width="2"/>
+    <line x1="50" y1="0" x2="50" y2="50" stroke="#000000" stroke-width="1.2"/>
+    <text x="25" y="32" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">D3</text>
+    <text x="140" y="31" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Trip Database</text>
+  </g>
+
+  <!-- Solid Inter-Process Flow: 3.0 to 5.0 (Trip Context) -->
+  <path d="M 545 585 L 545 930 L 760 930" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(560, 910)">
+    <rect width="100" height="18" fill="#ffffff"/>
+    <text x="50" y="14" fill="#000000" font-size="11" font-weight="bold">Trip Context &#x2192;</text>
+  </g>
+
+  <!-- Horizontal Separation Line 3 -->
+  <line x1="60" y1="655" x2="1500" y2="655" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+
+
+  <!-- ========================================================================= -->
+  <!-- 4. BOTTOM-LEFT SECTION: SAFETY HUB & EMERGENCY SERVICES (4.0) -->
+  <!-- ========================================================================= -->
+
+  <!-- Lower-Left Traveler (for Safety) -->
+  <g transform="translate(60, 715)">
+    <rect width="180" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="90" y="40" fill="#000000" font-size="15" font-weight="bold" text-anchor="middle">Traveler</text>
+  </g>
+
+  <!-- Flow: Traveler to 4.0 -->
+  <line x1="240" y1="735" x2="490" y2="735" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(250, 715)">
+    <rect width="230" height="18" fill="#ffffff"/>
+    <text x="115" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Safety Help / Check-in &#x2192;</text>
+  </g>
+
+  <!-- Flow: 4.0 to Traveler -->
+  <line x1="490" y1="765" x2="240" y2="765" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(250, 768)">
+    <rect width="230" height="18" fill="#ffffff"/>
+    <text x="115" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">&#x2190; Safety Cards / Recommendations</text>
+  </g>
+
+  <!-- Process 4.0 Circle -->
+  <g transform="translate(490, 695)">
+    <circle cx="55" cy="55" r="55" fill="#ffffff" stroke="#000000" stroke-width="2.2"/>
+    <text x="55" y="38" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">4.0</text>
+    <line x1="20" y1="46" x2="90" y2="46" stroke="#000000" stroke-width="1"/>
+    <text x="55" y="62" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Safety Hub &amp;</text>
+    <text x="55" y="78" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Emergency Services</text>
+  </g>
+
+  <!-- Flow: 4.0 to D4 Safety Check-in Log -->
+  <line x1="600" y1="735" x2="850" y2="735" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(620, 715)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" text-anchor="middle">Save Check-in &#x2192;</text>
+  </g>
+
+  <!-- Flow: D4 Safety Check-in Log to 4.0 -->
+  <line x1="850" y1="765" x2="600" y2="765" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(620, 768)">
+    <rect width="210" height="18" fill="#ffffff"/>
+    <text x="105" y="14" fill="#000000" font-size="11" text-anchor="middle">&#x2190; Check-in Status</text>
+  </g>
+
+  <!-- D4 Safety Check-in Log Store -->
+  <g transform="translate(850, 725)">
+    <line x1="0" y1="0" x2="230" y2="0" stroke="#000000" stroke-width="2"/>
+    <line x1="0" y1="50" x2="230" y2="50" stroke="#000000" stroke-width="2"/>
+    <line x1="50" y1="0" x2="50" y2="50" stroke="#000000" stroke-width="1.2"/>
+    <text x="25" y="32" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">D4</text>
+    <text x="140" y="31" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Safety Check-in Log</text>
+  </g>
+
+  <!-- Horizontal Separation Line 4 -->
+  <line x1="60" y1="875" x2="1500" y2="875" stroke="#000000" stroke-width="0.8" stroke-dasharray="4,4"/>
+
+
+  <!-- ========================================================================= -->
+  <!-- 5. BOTTOM-RIGHT SECTION: AI-BASED TRAVEL ASSISTANT INTERACTION (5.0) -->
+  <!-- ========================================================================= -->
+
+  <!-- Bottom-Left Traveler (for AI Assistant) -->
+  <g transform="translate(60, 935)">
+    <rect width="180" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="90" y="40" fill="#000000" font-size="15" font-weight="bold" text-anchor="middle">Traveler</text>
+  </g>
+
+  <!-- Flow: Traveler to 5.0 -->
+  <line x1="240" y1="955" x2="760" y2="955" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(360, 935)">
+    <rect width="280" height="18" fill="#ffffff"/>
+    <text x="140" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Travel / Safety Question &#x2192;</text>
+  </g>
+
+  <!-- Flow: 5.0 to Traveler -->
+  <line x1="760" y1="985" x2="240" y2="985" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(360, 988)">
+    <rect width="280" height="18" fill="#ffffff"/>
+    <text x="140" y="14" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">&#x2190; Generated Response</text>
+  </g>
+
+  <!-- Process 5.0 Circle -->
+  <g transform="translate(760, 915)">
+    <circle cx="55" cy="55" r="55" fill="#ffffff" stroke="#000000" stroke-width="2.2"/>
+    <text x="55" y="38" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">5.0</text>
+    <line x1="20" y1="46" x2="90" y2="46" stroke="#000000" stroke-width="1"/>
+    <text x="55" y="62" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">AI-Based Travel</text>
+    <text x="55" y="78" fill="#000000" font-size="11" font-weight="bold" text-anchor="middle">Assistant Interaction</text>
+  </g>
+
+  <!-- Flow: 5.0 to AI Assistant Service -->
+  <line x1="870" y1="955" x2="1260" y2="955" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(970, 935)">
+    <rect width="180" height="18" fill="#ffffff"/>
+    <text x="90" y="14" fill="#000000" font-size="11" text-anchor="middle">Prompt &#x2192;</text>
+  </g>
+
+  <!-- Flow: AI Assistant Service to 5.0 -->
+  <line x1="1260" y1="985" x2="870" y2="985" stroke="#000000" stroke-width="1.5" marker-end="url(#dfd-arrow)"/>
+  <g transform="translate(970, 988)">
+    <rect width="180" height="18" fill="#ffffff"/>
+    <text x="90" y="14" fill="#000000" font-size="11" text-anchor="middle">&#x2190; Tips &amp; Advice</text>
+  </g>
+
+  <!-- Bottom-Right: AI Assistant Service -->
+  <g transform="translate(1260, 935)">
+    <rect width="220" height="70" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="110" y="40" fill="#000000" font-size="15" font-weight="bold" text-anchor="middle">AI Assistant Service</text>
+  </g>
+
+</svg>

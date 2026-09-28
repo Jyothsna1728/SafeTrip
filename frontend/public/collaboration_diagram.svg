@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 940" width="100%" height="100%" style="background-color: #ffffff; font-family: Arial, Helvetica, sans-serif;">
+  <!-- Title -->
+  <text x="640" y="38" fill="#000000" font-size="24" font-weight="bold" text-anchor="middle">SafeTrip — UML Collaboration Diagram</text>
+  <line x1="40" y1="52" x2="1240" y2="52" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- ================= 1. UPPER-CENTER: DATABASE ================= -->
+  <g transform="translate(515, 80)">
+    <rect width="250" height="75" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="125" y="32" fill="#000000" font-size="15" font-weight="bold" text-decoration="underline" text-anchor="middle">:Database</text>
+    <text x="125" y="54" fill="#000000" font-size="12" text-anchor="middle">(MySQL safe_trip)</text>
+  </g>
+
+  <!-- ================= 2. UPPER-LEFT: AUTH SERVICE ================= -->
+  <g transform="translate(70, 100)">
+    <rect width="250" height="75" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="125" y="32" fill="#000000" font-size="15" font-weight="bold" text-decoration="underline" text-anchor="middle">:AuthService</text>
+    <text x="125" y="54" fill="#000000" font-size="12" text-anchor="middle">(Security &amp; JWT)</text>
+  </g>
+
+  <!-- ================= 3. UPPER-RIGHT: PLACES SERVICE ================= -->
+  <g transform="translate(960, 100)">
+    <rect width="260" height="75" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="130" y="32" fill="#000000" font-size="15" font-weight="bold" text-decoration="underline" text-anchor="middle">:PlacesService</text>
+    <text x="130" y="54" fill="#000000" font-size="12" text-anchor="middle">(Geospatial / Geocoding Client)</text>
+  </g>
+
+  <!-- ================= 4. CENTER: TRAVELER ================= -->
+  <g transform="translate(525, 430)">
+    <rect width="230" height="85" fill="#ffffff" stroke="#000000" stroke-width="2.2"/>
+    <text x="115" y="36" fill="#000000" font-size="16" font-weight="bold" text-decoration="underline" text-anchor="middle">:Traveler</text>
+    <text x="115" y="60" fill="#000000" font-size="13" text-anchor="middle">(Client User)</text>
+  </g>
+
+  <!-- ================= 5. LOWER-LEFT: SAFETY SERVICE ================= -->
+  <g transform="translate(70, 760)">
+    <rect width="250" height="75" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="125" y="32" fill="#000000" font-size="15" font-weight="bold" text-decoration="underline" text-anchor="middle">:SafetyService</text>
+    <text x="125" y="54" fill="#000000" font-size="12" text-anchor="middle">(Hospitals &amp; Police)</text>
+  </g>
+
+  <!-- ================= 6. LOWER-RIGHT: TRIP SERVICE ================= -->
+  <g transform="translate(960, 760)">
+    <rect width="260" height="75" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <text x="130" y="32" fill="#000000" font-size="15" font-weight="bold" text-decoration="underline" text-anchor="middle">:TripService</text>
+    <text x="130" y="54" fill="#000000" font-size="12" text-anchor="middle">(Itinerary Manager)</text>
+  </g>
+
+  <!-- ================= ASSOCIATION LINES AND DIRECTED NUMBERED MESSAGES ================= -->
+
+  <!-- LINE 1: AuthService to Database -->
+  <line x1="320" y1="130" x2="515" y2="130" stroke="#000000" stroke-width="1.8"/>
+  <text x="417" y="112" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">1.1: validate() &#x2192;</text>
+  <text x="417" y="148" fill="#000000" font-size="12" font-weight="bold" text-anchor="middle">&#x2190; 1.2: valid</text>
+
+  <!-- LINE 2: Traveler to AuthService -->
+  <line x1="525" y1="440" x2="280" y2="175" stroke="#000000" stroke-width="1.8"/>
+  <!-- Message Box: Login and Logout -->
+  <g transform="translate(195, 270)">
+    <rect width="230" height="84" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <text x="10" y="20" fill="#000000" font-size="11" font-weight="bold">1: login(email, pwd) &#x2197;</text>
+    <text x="10" y="38" fill="#000000" font-size="11" font-weight="bold">&#x2199; 1.3: return jwtToken</text>
+    <text x="10" y="56" fill="#000000" font-size="11" font-weight="bold">5: logout() &#x2197;</text>
+    <text x="10" y="74" fill="#000000" font-size="11" font-weight="bold">&#x2199; 5.1: clear session</text>
+  </g>
+
+  <!-- LINE 3: Traveler to PlacesService -->
+  <line x1="755" y1="440" x2="1000" y2="175" stroke="#000000" stroke-width="1.8"/>
+  <!-- Message Box: Explore Places -->
+  <g transform="translate(850, 290)">
+    <rect width="230" height="50" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <text x="10" y="20" fill="#000000" font-size="11" font-weight="bold">2: searchPlaces(dest, cat) &#x2197;</text>
+    <text x="10" y="38" fill="#000000" font-size="11" font-weight="bold">&#x2199; 2.1: return places &amp; pins</text>
+  </g>
+
+  <!-- LINE 4: Traveler to SafetyService -->
+  <line x1="525" y1="500" x2="280" y2="760" stroke="#000000" stroke-width="1.8"/>
+  <!-- Message Box: Safety Facilities -->
+  <g transform="translate(195, 610)">
+    <rect width="230" height="50" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <text x="10" y="20" fill="#000000" font-size="11" font-weight="bold">3: getSafetyFacilities() &#x2199;</text>
+    <text x="10" y="38" fill="#000000" font-size="11" font-weight="bold">&#x2197; 3.1: return hospital/police</text>
+  </g>
+
+  <!-- LINE 5: Traveler to TripService -->
+  <line x1="755" y1="500" x2="1000" y2="760" stroke="#000000" stroke-width="1.8"/>
+  <!-- Message Box: Trip Creation -->
+  <g transform="translate(850, 610)">
+    <rect width="230" height="50" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <text x="10" y="20" fill="#000000" font-size="11" font-weight="bold">4: createTrip(dest, dates) &#x2198;</text>
+    <text x="10" y="38" fill="#000000" font-size="11" font-weight="bold">&#x2196; 4.3: return tripDto</text>
+  </g>
+
+  <!-- LINE 6: TripService to Database -->
+  <line x1="1020" y1="760" x2="765" y2="155" stroke="#000000" stroke-width="1.8"/>
+  <!-- Message Box: Trip Persistence in Database -->
+  <g transform="translate(810, 450)">
+    <rect width="180" height="50" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <text x="10" y="20" fill="#000000" font-size="11" font-weight="bold">4.1: saveTrip() &#x2196;</text>
+    <text x="10" y="38" fill="#000000" font-size="11" font-weight="bold">&#x2198; 4.2: tripSaved</text>
+  </g>
+
+</svg>

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%" style="background-color: #ffffff; font-family: Arial, Helvetica, sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="36" fill="#000000" font-size="22" font-weight="bold" text-anchor="middle">SafeTrip — UML Component Diagram</text>
+  <line x1="40" y1="50" x2="1160" y2="50" stroke="#000000" stroke-width="1.5"/>
+
+  <!-- ================= 1. USER INTERFACE (REACT) ================= -->
+  <g transform="translate(460, 70)">
+    <rect width="280" height="52" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <!-- Component Tabs on Left -->
+    <rect x="-8" y="10" width="16" height="10" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+    <rect x="-8" y="30" width="16" height="10" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+    <text x="140" y="32" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">User Interface (React.js)</text>
+  </g>
+
+  <!-- ================= BALL AND SOCKET 1: REST API INTERFACE ================= -->
+  <!-- Line from UI to Socket (Half Circle / Curve) -->
+  <line x1="600" y1="122" x2="600" y2="152" stroke="#000000" stroke-width="1.5"/>
+  <!-- Socket (Required Interface Arc) -->
+  <path d="M 588 152 A 12 12 0 0 0 612 152" fill="none" stroke="#000000" stroke-width="1.8"/>
+  
+  <!-- Ball (Provided Interface Circle) -->
+  <circle cx="600" cy="158" r="7" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+  <!-- Line from Ball to Auth Component -->
+  <line x1="600" y1="165" x2="600" y2="185" stroke="#000000" stroke-width="1.5"/>
+  <text x="690" y="157" fill="#000000" font-size="11" font-weight="bold">IAuthService (REST / HTTPS)</text>
+
+  <!-- ================= 2. AUTHENTICATION COMPONENT ================= -->
+  <g transform="translate(450, 185)">
+    <rect width="300" height="52" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <rect x="-8" y="10" width="16" height="10" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+    <rect x="-8" y="30" width="16" height="10" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+    <text x="150" y="32" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">Authentication Component</text>
+  </g>
+
+  <!-- Line from Auth to Application Container -->
+  <line x1="600" y1="237" x2="600" y2="280" stroke="#000000" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+
+  <!-- ================= 3. APPLICATION COMPONENTS CONTAINER ================= -->
+  <g transform="translate(50, 280)">
+    <!-- Container Frame -->
+    <rect width="1100" height="420" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <text x="550" y="26" fill="#000000" font-size="15" font-weight="bold" text-anchor="middle">Application Components (Spring Boot Core)</text>
+    <line x1="0" y1="36" x2="1100" y2="36" stroke="#000000" stroke-width="1"/>
+
+    <!-- Row 1 Components inside Container -->
+
+    <!-- Sub-Component 1: Trip Management -->
+    <g transform="translate(40, 60)">
+      <rect width="300" height="75" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+      <rect x="-8" y="14" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <rect x="-8" y="44" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <text x="150" y="34" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Trip Management</text>
+      <text x="150" y="52" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Component</text>
+    </g>
+
+    <!-- Sub-Component 2: Place Explorer -->
+    <g transform="translate(400, 60)">
+      <rect width="300" height="75" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+      <rect x="-8" y="14" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <rect x="-8" y="44" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <text x="150" y="34" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Place Explorer</text>
+      <text x="150" y="52" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Component</text>
+    </g>
+
+    <!-- Sub-Component 3: Safety Hub -->
+    <g transform="translate(760, 60)">
+      <rect width="300" height="75" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+      <rect x="-8" y="14" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <rect x="-8" y="44" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <text x="150" y="34" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Safety Hub</text>
+      <text x="150" y="52" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Component</text>
+    </g>
+
+    <!-- Row 2 Components inside Container -->
+
+    <!-- Sub-Component 4: Saved Places -->
+    <g transform="translate(40, 180)">
+      <rect width="300" height="75" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+      <rect x="-8" y="14" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <rect x="-8" y="44" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <text x="150" y="34" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Saved Places</text>
+      <text x="150" y="52" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Component</text>
+    </g>
+
+    <!-- Sub-Component 5: AI Travel Assistant -->
+    <g transform="translate(400, 180)">
+      <rect width="300" height="75" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+      <rect x="-8" y="14" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <rect x="-8" y="44" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <text x="150" y="34" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">AI Travel Assistant</text>
+      <text x="150" y="52" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Component</text>
+    </g>
+
+    <!-- Sub-Component 6: Notification & Email -->
+    <g transform="translate(760, 180)">
+      <rect width="300" height="75" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+      <rect x="-8" y="14" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <rect x="-8" y="44" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <text x="150" y="34" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Notification &amp; Email</text>
+      <text x="150" y="52" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Component</text>
+    </g>
+
+    <!-- Sub-Component 7: Data Access Layer (JPA) -->
+    <g transform="translate(400, 300)">
+      <rect width="300" height="65" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+      <rect x="-8" y="12" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <rect x="-8" y="38" width="16" height="12" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+      <text x="150" y="28" fill="#000000" font-size="13" font-weight="bold" text-anchor="middle">Data Access Layer</text>
+      <text x="150" y="48" fill="#000000" font-size="12" text-anchor="middle">(JPA Repositories)</text>
+    </g>
+
+    <!-- Internal Connectors down to Data Access Layer -->
+    <line x1="190" y1="255" x2="460" y2="300" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+    <line x1="550" y1="255" x2="550" y2="300" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+    <line x1="910" y1="255" x2="640" y2="300" stroke="#000000" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- ================= BALL AND SOCKET 2: DATABASE JDBC INTERFACE ================= -->
+  <!-- Line from Container to Socket -->
+  <line x1="600" y1="700" x2="600" y2="735" stroke="#000000" stroke-width="1.5"/>
+  <!-- Socket (Half Circle / Curve) -->
+  <path d="M 588 735 A 12 12 0 0 0 612 735" fill="none" stroke="#000000" stroke-width="1.8"/>
+
+  <!-- Ball (Provided Interface by Database) -->
+  <circle cx="600" cy="741" r="7" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+  <!-- Line from Ball to Database -->
+  <line x1="600" y1="748" x2="600" y2="770" stroke="#000000" stroke-width="1.5"/>
+  <text x="670" y="740" fill="#000000" font-size="11" font-weight="bold">IDatabase (JDBC / SQL)</text>
+
+  <!-- ================= 4. DATABASE COMPONENT ================= -->
+  <g transform="translate(450, 770)">
+    <rect width="300" height="85" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+    <rect x="-8" y="16" width="16" height="14" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+    <rect x="-8" y="48" width="16" height="14" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+    <text x="150" y="32" fill="#000000" font-size="14" font-weight="bold" text-anchor="middle">Database Component</text>
+    <text x="150" y="52" fill="#000000" font-size="12" text-anchor="middle">MySQL 8 (safe_trip schema)</text>
+    <text x="150" y="70" fill="#000000" font-size="11" text-anchor="middle">• users, trips, places, checkins</text>
+  </g>
+
+</svg>
